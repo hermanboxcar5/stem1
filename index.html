@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Catnapped 5</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Comfortaa&family=Work+Sans:wght@400;500&display=swap');
+    body, div, h1, input, button {
+
+      font-family:'Work Sans', sans-serif;
+    }
+    button {
+      border:2px black solid;
+      padding:5px;
+      border-radius:3px;
+      background-color:white;
+      color:black
+    }
+    
+  </style>
+  
+</head>
+
+<body>
+  <h1>Catnapped 5</h1>
+  <iframe style = 'border:3px solid black;' id='if' width='480px' height='360px' src="game.html"></iframe><br>
+  <button onclick='fullscreen()'>Open fullscreen</button>
+
+  <button onclick='newtab()'>Open in new tab</button>
+  <script>
+    function fscreen(elem) {
+      if (elem.requestFullscreen) {
+        elem.requestFullscreen();
+      } else if (elem.webkitRequestFullscreen) { /* Safari */
+        elem.webkitRequestFullscreen();
+      } else if (elem.msRequestFullscreen) { /* IE11 */
+        elem.msRequestFullscreen();
+      }
+    }
+    function fullscreen(){
+      let es = document.getElementById('if')
+      fscreen(es)
+    }
+    function newtab(){
+      window.open('/game.html')
+    }
+  </script>
+</body>
+
+</html>
