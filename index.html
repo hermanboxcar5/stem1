@@ -25,10 +25,12 @@
 
 <body>
   <h1>Catnapped 5</h1>
-  <iframe style = 'border:3px solid black;' id='if' width='480px' height='360px' src="game.html"></iframe><br>
+  <iframe id='game' style = 'border:3px solid black;' id='if' width='480px' height='360px' src="game.html"></iframe><br>
   <button onclick='fullscreen()'>Open fullscreen</button>
 
   <button onclick='newtab()'>Open in new tab</button>
+
+  <button onclick='fcl()'>Reload frame</button>
   <script>
     function fscreen(elem) {
       if (elem.requestFullscreen) {
@@ -45,6 +47,9 @@
     }
     function newtab(){
       window.open('/game.html')
+    }
+    function fcl(){
+      document.getElementById('game').contentWindow.location.reload()
     }
   </script>
 </body>
